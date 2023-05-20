@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>K-Calc</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
+	<script src="https://kit.fontawesome.com/a81368914c.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+	<img class="wave" src="img/wave.png">
+	<div class="container">
+		<div class="img">
+			<img src="img/bg.svg">
+		</div>
+
+		<div  class="login-content">
+			<a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+			  <form class="form" id="myForm" onsubmit="return validateForm()">
+				<label class="label" for="name">Name:</label>
+				<input class="input" type="value" id="full-name" placeholder="Enter Name" name="name"><br><br>
+  
+				<label class="label" for="age">Age:</label>
+				<input class="input" type="number" id="age" placeholder="Enter Age" name="age"><br><br>
+  
+				<label class="label" for="gender">Gender:</label>
+				<select class="input" id="gender" name="gender">
+				  <option value="">Select Gender</option>
+				  <option value="male">Male</option>
+				  <option value="female">Female</option>
+				</select><br><br>
+  
+				<label class="label" for="height">Height:</label>
+				<input class="input" type="number" id="height" placeholder="in cm" name="height"><br><br>
+  
+				<label class="label" for="weight">Weight (in kg):</label>
+  
+  
+				<input class="input" type="number" placeholder="in kg" id="weight" name="weight"><br><br>
+				<label class="label" id="goal" for="goal">Goal:</label>
+				<select id="goat" name="goal">
+				  <option value="">Select your goal</option>
+				  <option value="Extreme weight gain">Extreme weight gain</option>
+				  <option value="Extreme weight loss">Extreme weight loss</option>
+				  <option value="Mild weight gain">Mild weight gain</option>
+				  <option value="Mild weight loss">Mild weight loss</option>
+				  <option value="Weight gain">Weight gain</option>
+				  <option value="Weight loss">Weight loss</option>
+				  <option value="maintain weight">maintain weight</option>
+				</select><br><br>
+				<button type="button" class="submit" onclick="getD()">Submit</button>
+				<br>
+				<button id="next" type="button" class="submit" onclick="location.href='./KCalc.html'">Proceed</button>
+			  </form><br><br>
+  
+			  <p id="abc"></p>
+			  <p id="xyzs"></p>
+			  <script>
+				function validateForm() {
+				  var name = document.forms["myForm"]["name"].value;
+				  var age = document.forms["myForm"]["age"].value;
+				  var gender = document.forms["myForm"]["gender"].value;
+				  var height = document.forms["myForm"]["height"].value;
+				  var weight = document.forms["myForm"]["weight"].value;
+  
+				  if (name == "") {
+					alert("Name must be filled out");
+					return false;
+				  }
+  
+				  if (age == "" || age < 1 || age > 150) {
+					alert("Please enter a valid age between 1 and 150");
+					return false;
+				  }
+  
+				  if (gender == "") {
+					alert("Please select your gender");
+					return false;
+				  }
+  
+				  if (height == "" || height < 1 || height > 300) {
+					alert("Please enter a valid height between 1 and 300 cm");
+					return false;
+				  }
+  
+				  if (weight == "" || weight < 1 || weight > 500) {
+					alert("Please enter a valid weight between 1 and 500 kg");
+					return false;
+				  }
+  
+				  return true;
+				}
+			  </script>
+			</a>
+		  </div>
+    </div>
+    <script type="text/javascript" src="getfit.js"></script>
+</body>
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation Bar</title>
+    <style>
+      /* Reset default browser styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      /* Body styles */
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f1f1f1;
+        padding: 20px;
+      }
+
+      /* Box styles */
+      .box {
+        border: 1px solid #ccc;
+        padding: 20px;
+        margin-bottom: 20px;
+      }
+
+      /* Marquee styles */
+      .box marquee {
+        display: block;
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+
+      /* File input styles */
+      .box input[type="file"] {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+
+      /* Body styles */
+      body {
+        font-family: Arial, sans-serif;
+        background-color: hsl(139, 25%, 63%);
+        padding: 20px;
+      }
+
+      /* Navbar styles */
+      .navbar {
+        background-color: #1e84ac;
+        overflow: hidden;
+        position: relative;
+        animation: slideDown 0.5s ease-in-out;
+      }
+  
+      .navbar li {
+        float: left;
+        position: relative;
+      }
+      .file{
+        align-content: center;
+        display:flex;
+        color:brown;
+        background-color: darkgray;
+      }
+
+      .right{
+        align-content:center;
+        padding:50px;
+        border-radius: 50;
+        
+      }
+      .left{
+        border:black;
+        display:flex;
+        padding: 50px;
+        align-content: center;
+        border-radius: 50px;
+        width:max-content;
+        
+      }
+  
+      .navbar li a {
+        display: block;
+        color: hsl(0, 59%, 46%);
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        transition: background-color 0.3s ease-in-out;
+      }
+      .mainbody{
+        background-color: rgb(238, 252, 235);
+      }
+  
+      .navbar li a:hover {
+        background-color: #29e0b8;
+      }
+
+      /* Animation keyframes */
+      @keyframes slideDown {
+        0% {
+          opacity: 0;
+          transform: translateY(-10px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
+     
+</head>
+
+<body>
+    <section class="mainbody">
+   
+    <br>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <section class="body">
+        <div class="box">
+            <marquee behavior="scroll" direction="left">Drop your files here to get the visual vital report.</marquee>
+            <input type="file" id="f" class="file" name="files[]" multiple>
+        </div>
+    </section>
+    <div class="right">
+    <button type="button" onclick="print()">Print</button>
+    <select id="modeSelector">
+        <option value="rbc">RBC</option>
+        <option value="wbc">WBC</option>
+        <option value="hmo">Hemoglobin</option>
+    </select>
+    <p id="rbc"></p>
+    <p id="wbc"></p>
+    <p id="hmo"></p>
+    <div id="chart-container">
+        <canvas id="myChart"></canvas>
+    </div>
+    </div>
+   
+    <script src="./vscript.js"></script>
+</section>
+</body>
+</html>
