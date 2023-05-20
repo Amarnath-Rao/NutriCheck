@@ -1,1 +1,1 @@
-
+# NutriCheck is a comprehensive health platform that integrates with popular health apps. It offers three key features: KCalc for food tracking and Google Fit integration, WeatherBite for personalized food recommendations based on location and health conditions, and VitalScan for storing and visualizing health reports.
